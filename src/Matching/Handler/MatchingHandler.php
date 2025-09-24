@@ -15,8 +15,8 @@ class MatchingHandler implements MatcherInterface
         /**
          * @var MatchingStrategyInterface[]
          */
-        #[AutowireIterator('app.matching_strategy', defaultIndexMethod: 'getName')]
-        private iterable $strategies, // ['tag'=> new TagBasedStrategy, ...]
+        #[AutowireIterator('matching_bundle.matching_strategy', defaultIndexMethod: 'getName')]
+        private iterable $strategies,
         private readonly RankingService $ranking,
     )
     {

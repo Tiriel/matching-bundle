@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Attribute\AutowireLocator;
 class RankingService
 {
     public function __construct(
-        #[AutowireLocator('app.ranking_strategy')]
+        #[AutowireLocator('matching_bundle.ranking_strategy')]
         private iterable $strategies
     ) {}
 

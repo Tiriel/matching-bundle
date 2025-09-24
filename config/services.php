@@ -9,5 +9,8 @@ return function(ContainerConfigurator $container): void {
             ->autoconfigure()
     ;
 
-    $services->load('Tiriel\\MatchingBundle\\', '../src/');
+    $services
+        ->load('Tiriel\\MatchingBundle\\', '../src/')
+            ->exclude(['../src/DependencyInjection/'])
+    ;
 };
