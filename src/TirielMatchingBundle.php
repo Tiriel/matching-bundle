@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 use Tiriel\MatchingBundle\DependencyInjection\TraceableMatchingStrategyCompilerPass;
+use Tiriel\MatchingBundle\Matching\Handler\MatchingHandler;
 use Tiriel\MatchingBundle\MessageHandler\MatchingMessageHandler;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 
@@ -21,6 +22,13 @@ class TirielMatchingBundle extends AbstractBundle
                     ->validate()
                         ->ifTrue(fn ($className) => !\class_exists($className))
                         ->thenInvalid('User repository class "%s" does not exists.')
+                    ->end()
+                ->end()
+                ->stringNode('matching_namespace')
+                    ->isRequired()
+                ->end()
+                ->stringNode('ranking_namespace')
+                    ->isRequired()
                 ->end()
             ->end()
         ;
@@ -32,6 +40,10 @@ class TirielMatchingBundle extends AbstractBundle
         $container->services()
             ->get(MatchingMessageHandler::class)
             ->call('setUserRepository', [service($config['user_repository'])]);
+        $container->services()
+            ->get(MatchingHandler::class)
+            ->call('setStrategyNamespace', [$config['matching_namespace']])
+            ->call('setRankingNamespace', [$config['ranking_namespace']]);
     }
 
     public function build(ContainerBuilder $container)

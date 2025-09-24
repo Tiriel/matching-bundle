@@ -9,6 +9,4 @@ use Symfony\Component\DependencyInjection\Attribute\Autoconfigure;
 interface MatchingStrategyInterface
 {
     public function match(MatchableUserInterface $user): iterable;
-
-    public static function getName(): string;
 }

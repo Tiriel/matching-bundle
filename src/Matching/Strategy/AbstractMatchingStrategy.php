@@ -8,7 +8,7 @@ use Tiriel\MatchingBundle\Interface\MatchableUserInterface;
 
 abstract class AbstractMatchingStrategy implements MatchingStrategyInterface
 {
-    private ?ServiceEntityRepositoryInterface $repository = null;
+    protected ?ServiceEntityRepositoryInterface $repository = null;
 
     public function match(MatchableUserInterface $user): iterable
     {
