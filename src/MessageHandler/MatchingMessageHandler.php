@@ -15,7 +15,7 @@ class MatchingMessageHandler
         private readonly MatcherInterface $handler,
     ) {}
 
-    public function __invoke(MatchingMessageHandler $message): void
+    public function __invoke(MatchingMessage $message): void
     {
         if (null === $this->userRepository) {
             throw new \LogicException("UserRepository is missing from configuration.");
