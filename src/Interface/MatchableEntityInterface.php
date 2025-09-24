@@ -2,7 +2,9 @@
 
 namespace Tiriel\MatchingBundle\Interface;
 
-interface MatchableUserInterface
+interface MatchableEntityInterface
 {
     public function getId(): mixed;
+
+    public function getName(): string;
 }

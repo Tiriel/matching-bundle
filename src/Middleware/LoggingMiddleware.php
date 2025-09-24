@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Middleware;
+namespace Tiriel\MatchingBundle\Middleware;
 
-use App\Message\MatchingMessage;
+use Tiriel\MatchingBundle\Message\MatchingMessage;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 use Symfony\Component\Messenger\Envelope;

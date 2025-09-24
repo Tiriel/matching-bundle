@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Matching\Ranking;
+namespace Tiriel\MatchingBundle\Matching\Ranking;
 
-use App\Interface\MatchableUserInterface;
+use Tiriel\MatchingBundle\Interface\MatchableUserInterface;
 use Symfony\Component\DependencyInjection\Attribute\AutowireLocator;
 
 class RankingService

@@ -31,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Tiriel\\MatchingBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Tiriel\\MatchingBundle\\Tests\\": "tests/"
         }
     },
     "replace": {

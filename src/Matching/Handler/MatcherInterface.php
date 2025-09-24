@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Matching\Handler;
+namespace Tiriel\MatchingBundle\Matching\Handler;
 
-use App\Interface\MatchableUserInterface;
+use Tiriel\MatchingBundle\Interface\MatchableUserInterface;
 
 interface MatcherInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Message;
+namespace Tiriel\MatchingBundle\Message;
 
 use Symfony\Component\Messenger\Attribute\AsMessage;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Matching\Handler;
+namespace Tiriel\MatchingBundle\Matching\Handler;
 
-use App\Interface\MatchableUserInterface;
+use Tiriel\MatchingBundle\Interface\MatchableUserInterface;
 use Symfony\Component\DependencyInjection\Attribute\AsDecorator;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Contracts\Cache\CacheInterface;

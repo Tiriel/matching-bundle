@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Matching\Handler;
+namespace Tiriel\MatchingBundle\Matching\Handler;
 
-use App\Interface\MatchableUserInterface;
-use App\Matching\Ranking\RankingService;
-use App\Matching\Strategy\MatchingStrategyInterface;
+use Tiriel\MatchingBundle\Interface\MatchableUserInterface;
+use Tiriel\MatchingBundle\Matching\Ranking\RankingService;
+use Tiriel\MatchingBundle\Matching\Strategy\MatchingStrategyInterface;
 use Symfony\Component\DependencyInjection\Attribute\AsAlias;
 use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
 
@@ -25,7 +25,7 @@ class MatchingHandler implements MatcherInterface
 
     public function match(MatchableUserInterface $user, string $strategyName): iterable
     {
-        $rankingStrategy = sprintf("App\\Matching\\Ranking\\Strategy\\%sRankingStrategy", ucfirst($strategyName));
+        $rankingStrategy = sprintf("Tiriel\\MatchingBundle\\Matching\\Ranking\\Strategy\\%sRankingStrategy", ucfirst($strategyName));
         $rawMatchings = $this->strategies[$strategyName]->match($user);
 
         return $this->ranking->rankMatchings($user, $rawMatchings, $rankingStrategy);

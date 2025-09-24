@@ -1,8 +1,8 @@
 <?php
 
-namespace App\MessageHandler;
+namespace Tiriel\MatchingBundle\MessageHandler;
 
-use App\Matching\Handler\MatcherInterface;
+use Tiriel\MatchingBundle\Matching\Handler\MatcherInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
