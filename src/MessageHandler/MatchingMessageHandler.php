@@ -1,0 +1,41 @@
+<?php
+
+namespace App\MessageHandler;
+
+use App\Matching\Handler\MatcherInterface;
+use App\Message\MatchingMessage;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
+use Symfony\Contracts\Service\Attribute\Required;
+
+#[AsMessageHandler]
+class MatchingMessageHandler
+{
+    private ?ServiceEntityRepositoryInterface $userRepository = null;
+
+    public function __construct(
+        private readonly MatcherInterface $handler,
+    ) {}
+
+    public function __invoke(MatchingMessageHandler $message): void
+    {
+        if (null === $this->userRepository) {
+            throw new \LogicException("UserRepository is missing from configuration.");
+        }
+
+        $user = $this->userRepository->find($message->userId);
+        if (null === $user) {
+            throw new \InvalidArgumentException('User not found');
+        }
+
+        $strategy = $this->handler->match($user, $message->strategyName);
+
+        dump($strategy);
+    }
+
+    #[Required]
+    public function setUserRepository(ServiceEntityRepositoryInterface $userRepository): void
+    {
+        $this->userRepository = $userRepository;
+    }
+}
