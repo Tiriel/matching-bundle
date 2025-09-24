@@ -3,6 +3,7 @@
 namespace Tiriel\MatchingBundle\MessageHandler;
 
 use Tiriel\MatchingBundle\Matching\Handler\MatcherInterface;
+use Tiriel\MatchingBundle\Message\MatchingMessage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
