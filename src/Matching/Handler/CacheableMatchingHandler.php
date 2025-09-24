@@ -19,7 +19,7 @@ class CacheableMatchingHandler implements MatcherInterface
 
     public function match(MatchableUserInterface $user, string $strategyName): iterable
     {
-        $key = $this->slugger->slug(sprintf("matching_%s_%s", $user->getUserIdentifier(), $strategyName));
+        $key = $this->slugger->slug(sprintf("matching_%s_%s", $user->getId(), $strategyName));
 
         return $this->apiCache->get((string) $key, function (ItemInterface $item) use ($user, $strategyName) {
             $item->expiresAfter(300);

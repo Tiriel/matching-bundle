@@ -1,5 +1,7 @@
 {
-    "type": "project",
+    "name": "tiriel/matching-bundle",
+    "description": "Matching abstraction bundle for Symfony",
+    "type": "library",
     "license": "proprietary",
     "minimum-stability": "stable",
     "prefer-stable": true,
@@ -7,16 +9,15 @@
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "doctrine/dbal": "^3",
         "doctrine/doctrine-bundle": "^2.16",
-        "doctrine/doctrine-migrations-bundle": "^3.4",
-        "doctrine/orm": "^3.5",
         "symfony/console": "7.3.*",
         "symfony/dotenv": "7.3.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "7.3.*",
         "symfony/messenger": "7.3.*",
         "symfony/runtime": "7.3.*",
+        "symfony/string": "7.3.*",
+        "symfony/translation-contracts": "*",
         "symfony/yaml": "7.3.*"
     },
     "config": {

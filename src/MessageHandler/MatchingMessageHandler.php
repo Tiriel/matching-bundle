@@ -3,10 +3,8 @@
 namespace App\MessageHandler;
 
 use App\Matching\Handler\MatcherInterface;
-use App\Message\MatchingMessage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
-use Symfony\Contracts\Service\Attribute\Required;
 
 #[AsMessageHandler]
 class MatchingMessageHandler
@@ -33,7 +31,6 @@ class MatchingMessageHandler
         dump($strategy);
     }
 
-    #[Required]
     public function setUserRepository(ServiceEntityRepositoryInterface $userRepository): void
     {
         $this->userRepository = $userRepository;
