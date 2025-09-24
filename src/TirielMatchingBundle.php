@@ -19,7 +19,7 @@ class TirielMatchingBundle extends AbstractBundle
                 ->stringNode('user_repository')
                     ->isRequired()
                     ->validate()
-                        ->ifFalse(fn ($className) => \class_exists($className))
+                        ->ifTrue(fn ($className) => !\class_exists($className))
                         ->thenInvalid('User repository class "%s" does not exists.')
                 ->end()
             ->end()
