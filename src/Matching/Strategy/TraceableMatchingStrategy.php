@@ -8,7 +8,7 @@ use Tiriel\MatchingBundle\Interface\MatchableUserInterface;
 
 class TraceableMatchingStrategy implements MatchingStrategyInterface
 {
-    protected static string $name;
+    protected static string $name = '';
 
     public function __construct(
         protected readonly MatchingStrategyInterface $inner,
