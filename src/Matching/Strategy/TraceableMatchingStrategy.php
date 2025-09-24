@@ -5,7 +5,6 @@ namespace Tiriel\MatchingBundle\Matching\Strategy;
 use Psr\Log\LoggerInterface;
 use Tiriel\MatchingBundle\Interface\MatchableEntityInterface;
 use Tiriel\MatchingBundle\Interface\MatchableUserInterface;
-use Tiriel\MatchingBundle\Matching\Strategy\MatchingStrategyInterface;
 
 class TraceableMatchingStrategy implements MatchingStrategyInterface
 {

@@ -10,15 +10,15 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/doctrine-bundle": "^2.16",
-        "symfony/console": "7.3.*",
-        "symfony/dotenv": "7.3.*",
+        "symfony/cache-contracts": "^3.6",
+        "symfony/config": "7.2.*",
+        "symfony/dependency-injection": "7.2.*",
         "symfony/flex": "^2",
-        "symfony/framework-bundle": "7.3.*",
-        "symfony/messenger": "7.3.*",
-        "symfony/runtime": "7.3.*",
-        "symfony/string": "7.3.*",
-        "symfony/translation-contracts": "*",
-        "symfony/yaml": "7.3.*"
+        "symfony/http-kernel": "7.2.*",
+        "symfony/messenger": "7.2.*",
+        "symfony/runtime": "7.2.*",
+        "symfony/string": "7.2.*",
+        "symfony/translation-contracts": "*"
     },
     "config": {
         "allow-plugins": {
@@ -51,8 +51,6 @@
     },
     "scripts": {
         "auto-scripts": {
-            "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
@@ -67,7 +65,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "7.3.*"
+            "require": "7.2.*"
         }
     }
 }
